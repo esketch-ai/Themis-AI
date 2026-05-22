@@ -63,5 +63,12 @@ By using Themis as your Cognitive OS Harness, you achieve:
 - `docs/_para/30_resources`: Your source knowledge.
 - `docs/_para/40_archive`: Your immutable project history.
 
+## 👤 Author
+
+- **Name**: Seung Heon Song
+- **Email**: [esketch@gmail.com](mailto:esketch@gmail.com)
+- **Mobile**: +82-10-2992-9736
+- **Location**: Seoul, South Korea
+
 ## License
 ISC
