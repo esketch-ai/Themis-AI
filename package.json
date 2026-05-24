@@ -8,7 +8,9 @@
     "build": "tsc && chmod +x build/index.js",
     "start": "node build/index.js",
     "start:sse": "node build/index.js --sse",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "test:routing": "tsc && node build/projects/citizen-routing-qaqc/run-tests.js",
+    "integrity:routing": "tsc && node build/projects/citizen-routing-qaqc/run-integrity.js"
   },
   "keywords": [],
   "author": "",
