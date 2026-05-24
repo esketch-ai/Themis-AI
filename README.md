@@ -57,6 +57,30 @@ By using Themis as your Cognitive OS Harness, you achieve:
 - `archive_project`: Finalizes project lifecycle.
 - **PARA Resources**: Direct access to your knowledge base via `themis://docs/...` URIs.
 
+## 🧪 Testing & Diagnostics (Citizen Routing QA/QC)
+
+Themis includes a high-performance, rule-based QA/QC validator and regression analysis suite built to verify physical routing viability, GPS telemetry drift, spatial transfer sequence continuity, and carbon savings data calibration.
+
+To execute tests or diagnostic routines inside the workspace:
+
+### 1. Run Automated Unit Test Runner
+Runs the full Jest-equivalent test suite checking 9 critical path scenarios (impossible speeds, teleportation gaps, and detour metrics):
+```bash
+npm run test:routing
+```
+
+### 2. Run PARA System Integrity Health Check
+Runs structural diagnostics to ensure all active projects strictly follow standard PARA guidelines (verifying the existence of `README.md`, `DEVELOPMENT_PLAN.md`, and `AGENT_HANDOFF.md`):
+```bash
+npm run integrity:routing
+```
+
+### 3. Build & Compile TypeScript Code
+Triggers standard compilation to generate the NodeNext ESM outputs inside the `build/` folder:
+```bash
+npm run build
+```
+
 ## 📂 PARA Directory Structure
 - `docs/_para/10_projects`: Your active workspace.
 - `docs/_para/20_areas`: Your engineering standards.
