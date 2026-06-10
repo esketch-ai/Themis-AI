@@ -91,6 +91,11 @@ export class ThemisServer {
           name: "validate_para_integrity",
           description: "Run PARA health check.",
           inputSchema: { type: "object", properties: {} }
+        },
+        {
+          name: "trigger_context_gc",
+          description: "Manually trigger context garbage collection to clean up memory/VRAM.",
+          inputSchema: { type: "object", properties: {} }
         }
       ],
     }));
@@ -104,6 +109,11 @@ export class ThemisServer {
             return { content: [{ type: "text", text: await para.listProjects(request.params.arguments?.status as string) }] };
           case "validate_para_integrity":
             return { content: [{ type: "text", text: await para.validateParaIntegrity() }] };
+          case "trigger_context_gc":
+            await engine.archiveProject("completed-projects"); // Example trigger
+            const { runContextGC } = await import("../core/gc.js");
+            await runContextGC();
+            return { content: [{ type: "text", text: "Context Garbage Collection completed successfully." }] };
           default:
             throw new Error(`Unknown tool: ${request.params.name}`);
         }

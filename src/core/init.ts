@@ -42,13 +42,25 @@ export async function initializeProject(targetDir: string) {
       }
     }
 
-    // 3. Create a basic .gitignore if it doesn't exist
+    // 3. Create .themisrc.json
+    const config = {
+      version: "1.0.0",
+      docsPath: "./docs/_para",
+      gcIntervalMs: 3600000,
+      autoGC: true
+    };
+    await fs.writeFile(path.join(targetDir, ".themisrc.json"), JSON.stringify(config, null, 2));
+
+    // 4. Create a basic .gitignore if it doesn't exist
     const gitignorePath = path.join(targetDir, ".gitignore");
-    const themisIgnore = "\n# Themis AI\n.themis/\nbuild/\nnode_modules/\n.env\n";
+    const themisIgnore = "\n# Themis AI Security Wall\n.themis/\n.env\n*.pem\nsecrets.json\nbuild/\nnode_modules/\n";
     
     try {
       await fs.access(gitignorePath);
-      await fs.appendFile(gitignorePath, themisIgnore);
+      const currentIgnore = await fs.readFile(gitignorePath, "utf-8");
+      if (!currentIgnore.includes(".themis/")) {
+        await fs.appendFile(gitignorePath, themisIgnore);
+      }
     } catch (e) {
       await fs.writeFile(gitignorePath, themisIgnore);
     }
