@@ -2,3 +2,9 @@ node_modules
 build
 .DS_Store
 .env
+
+# Themis AI
+.themis/
+build/
+node_modules/
+.env

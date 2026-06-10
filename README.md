@@ -1,97 +1,80 @@
-# Themis AI: Cognitive OS Harness (MCP Server)
+# 🏛️ Themis AI: Cognitive OS Harness
 
-Themis is an AI Agent designed to facilitate **Vibe Coding** while maintaining rigorous documentation and architectural integrity. It acts as a **Cognitive OS Harness**, allowing developers to build rapidly with AI while automatically extracting precise specifications and managing a structured knowledge base using the **PARA** methodology.
+**Themis AI**는 개발자가 **Vibe Coding**(AI와 함께하는 빠른 개발)을 즐기면서도, 시스템의 **건축적 무결성**과 **문서화**를 완벽하게 유지할 수 있도록 돕는 AI 에이전트 하네스입니다. 
 
-## 🎯 Purpose & Vision
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/)를 기반으로 설계되어, 여러분이 사용하는 AI 에이전트(Cursor, Claude Desktop, VS Code 등)에 즉시 "기억"과 "질서"를 부여합니다.
 
-The core mission of Themis is to bridge the gap between "Fast-paced AI development" and "Sustainable engineering standards." 
+---
 
-- **Developers** can focus on the creative flow (Vibe Coding) without worrying about documentation drift.
-- **Themis** monitors the implementation and "reverse-engineers" the technical specifications back into the documentation system.
-- **Tokens** are optimized by selectively serving only the necessary context, enabling infinite development cycles without context bloat.
+## 🚀 Quick Start (1-Minute Setup)
 
-## 🛠 Features
+별도의 클론이나 복잡한 설치 없이, 여러분의 프로젝트 폴더에서 바로 시작하세요.
 
-- **Context Optimization**: Serves only relevant project `README`s, `DEVELOPMENT_PLAN`s, and `Policy` files.
-- **Reverse Spec Extraction**: Automatically generates `SPEC.md` from your source code (TypeScript/JS/etc.) to keep docs in sync.
-- **PARA Lifecycle Management**: Automates the PARA (Projects, Areas, Resources, Archives) workflow.
-- **MCP Native**: Built on the Model Context Protocol for immediate compatibility with modern AI agents.
-
-## 🚀 Installation & Setup
-
-### 1. Clone and Build
+### 1. 프로젝트 초기화
+터미널에서 아래 명령어를 실행하면 PARA(Projects, Areas, Resources, Archives) 구조가 자동으로 생성됩니다.
 ```bash
-git clone git@github.com:esketch-ai/Themis-AI.git
-cd Themis-AI
-npm install
-npm run build
+npx themis-ai init
 ```
 
-### 2. Connect to your AI Agent (MCP)
-Add Themis to your MCP client configuration (e.g., Gemini CLI, Cursor, or Claude Desktop):
+### 2. AI 에이전트 연결 (MCP)
+여러분이 사용하는 툴의 MCP 설정에 다음을 추가하세요.
 
-```json
-{
-  "mcpServers": {
-    "themis": {
-      "command": "node",
-      "args": ["/absolute/path/to/Themis-AI/build/index.js"]
-    }
-  }
-}
-```
+#### **Cursor / Claude Desktop**
+- **Type**: `command`
+- **Command**: `npx`
+- **Args**: `-y`, `themis-ai`
 
-## 📊 Expected Results (The "Outcome")
+---
 
-By using Themis as your Cognitive OS Harness, you achieve:
+## 🧠 Core Methodology: PARA
 
-1. **Zero Documentation Lag**: As you vibe code, Themis extracts the structural spec. Your `SPEC.md` is always a true reflection of your code.
-2. **Infinite Continuity**: New AI sessions start with perfectly distilled context, avoiding the "amnesia" common in long-running AI projects.
-3. **Automated Order**: Your `docs/` folder stays clean. Completed projects are archived, and new standards are promoted to your "Areas" automatically.
-4. **Token Efficiency**: Dramatic reduction in prompt overhead by excluding irrelevant files from the AI's context window.
+Themis는 Tiago Forte의 **PARA 방법론**을 AI 개발 환경에 최적화하여 구현합니다.
 
-## 🧰 Tools & Resources
+- **10_projects**: 현재 진행 중인 명확한 목표가 있는 작업 (예: `new-auth-system`).
+- **20_areas**: 지속적으로 유지되어야 하는 기술 표준 및 정책 (예: `code-style`, `architecture`).
+- **30_resources**: 참고용 지식 소스 및 리서치 자료.
+- **40_archive**: 완료된 프로젝트들의 기록 보관소.
 
-- `get_optimized_context`: Distills the current project state for the AI.
-- `extract_spec_from_code`: Reverses implementation back to specs.
-- `archive_project`: Finalizes project lifecycle.
-- **PARA Resources**: Direct access to your knowledge base via `themis://docs/...` URIs.
+---
 
-## 🧪 Testing & Diagnostics (Citizen Routing QA/QC)
+## 🛠️ Themis Tools (AI가 사용하는 도구)
 
-Themis includes a high-performance, rule-based QA/QC validator and regression analysis suite built to verify physical routing viability, GPS telemetry drift, spatial transfer sequence continuity, and carbon savings data calibration.
+Themis를 연결하면 여러분의 AI 에이전트가 다음 도구들을 사용할 수 있게 됩니다:
 
-To execute tests or diagnostic routines inside the workspace:
+- `get_optimized_context`: 현재 프로젝트의 핵심 맥락만 추출하여 토큰 소모를 줄이고 AI의 명확도를 높입니다.
+- `list_projects`: 현재 진행 중인 프로젝트들의 상태와 진행률을 한 눈에 파악합니다.
+- `validate_para_integrity`: 프로젝트 구조가 표준 정책을 잘 따르고 있는지 건강 검진을 수행합니다.
 
-### 1. Run Automated Unit Test Runner
-Runs the full Jest-equivalent test suite checking 9 critical path scenarios (impossible speeds, teleportation gaps, and detour metrics):
-```bash
-npm run test:routing
-```
+---
 
-### 2. Run PARA System Integrity Health Check
-Runs structural diagnostics to ensure all active projects strictly follow standard PARA guidelines (verifying the existence of `README.md`, `DEVELOPMENT_PLAN.md`, and `AGENT_HANDOFF.md`):
-```bash
-npm run integrity:routing
-```
+## 🏗️ Architecture
 
-### 3. Build & Compile TypeScript Code
-Triggers standard compilation to generate the NodeNext ESM outputs inside the `build/` folder:
-```bash
-npm run build
-```
+배포 및 확장을 고려한 모듈형 구조로 설계되었습니다:
 
-## 📂 PARA Directory Structure
-- `docs/_para/10_projects`: Your active workspace.
-- `docs/_para/20_areas`: Your engineering standards.
-- `docs/_para/30_resources`: Your source knowledge.
-- `docs/_para/40_archive`: Your immutable project history.
+- **Core Engine**: VRAM 감시 및 지식 추출 엔진.
+- **MCP Server**: Stdio 및 SSE(Network) 프로토콜 동시 지원.
+- **PARA Manager**: 디렉토리 구조 기반의 지식 인덱싱 시스템.
+
+---
+
+## 🤝 Contributing
+
+Themis는 오픈소스 프로젝트입니다. 버그 제보나 기능 제안은 언제나 환영합니다!
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Submit a pull request.
+
+---
 
 ## 👤 Author
 
 - **Name**: Seung Heon Song
 - **Email**: [esketch@gmail.com](mailto:esketch@gmail.com)
-- **Location**: Seoul, South Korea
+- **GitHub**: [@esketch-ai](https://github.com/esketch-ai)
 
-## License
-ISC
+## 📄 License
+
+ISC License. Copyright (c) 2026, Seung Heon Song.
