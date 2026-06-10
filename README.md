@@ -33,7 +33,7 @@ This creates a `docs/_para/` structure and a secure `.gitignore` to prevent secr
 
 #### 2. Connect Your Agent (MCP)
 Themis follows the **Model Context Protocol**. Add it to your client (e.g., Cursor or Claude Desktop):
-- **Command**: `npx -y themis-ai`
+- **Command**: `npx -y @esketch/themis-ai`
 - **Environment**: Supports Mac, Windows (WSL), and Linux.
 
 ---
