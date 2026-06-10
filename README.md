@@ -49,7 +49,7 @@ Themis follows the **Model Context Protocol**. Add it to your client (e.g., Curs
 ## 🇰🇷 한국어
 
 ### 🎯 Themis AI란 무엇인가요?
-Themis AI는 개발 환경을 위한 **인지 OS 하네스(Cognitive OS Harness)**입니다. 대규모 프로젝트나 장기 프로젝트에서 AI 에이전트가 겪는 "기억 상실(Amnesia)"과 "문서화 누락(Documentation Drift)" 문제를 **PARA 방법론** 기반의 구조화된 메모리 레이어로 해결합니다.
+Themis AI는 개발 환경을 위한 "인지 OS 하네스(Cognitive OS Harness)"입니다. 대규모 프로젝트나 장기 프로젝트에서 AI 에이전트가 겪는 "기억 상실(Amnesia)"과 "문서화 누락(Documentation Drift)" 문제를 **PARA 방법론** 기반의 구조화된 메모리 레이어로 해결합니다.
 
 Themis를 여러분의 AI(Cursor, Claude 등)에 연결하면 다음과 같은 초능력을 부여할 수 있습니다:
 1. **망각 방지**: 결정 사항과 기술 스펙을 인덱싱된 지식 창고에 체계적으로 유지합니다.
